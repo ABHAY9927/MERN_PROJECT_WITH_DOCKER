@@ -1,127 +1,138 @@
-# ProShop eCommerce Platform
+# 🚀 MERN Project with Docker
 
-> eCommerce platform built with the MERN stack & Redux.
+A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application fully containerized using Docker and Docker Compose.
 
-### THIS PROJECT IS DEPRECATED
-This project is no longer supported. The new project/course has been released. The code has been cleaned up and now uses Redux Toolkit. You can find the new version [HERE](https://github.com/bradtraversy/proshop-v2)
+---
 
-![screenshot](https://github.com/bradtraversy/proshop_mern/blob/master/uploads/Screen%20Shot%202020-09-29%20at%205.50.52%20PM.png)
+## 📌 Features
 
-## Features
+* Full-stack MERN application
+* Dockerized frontend and backend
+* MongoDB container integration
+* One-command setup using Docker Compose
+* Production-ready structure
 
-- Full featured shopping cart
-- Product reviews and ratings
-- Top products carousel
-- Product pagination
-- Product search feature
-- User profile with orders
-- Admin product management
-- Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
-- Database seeder (products & users)
+---
 
-## Note on Issues
-Please do not post issues here that are related to your own code when taking the course. Add those in the Udemy Q/A. If you clone THIS repo and there are issues, then you can submit
+## 🛠️ Tech Stack
 
-## Usage
+* Frontend: React.js
+* Backend: Node.js, Express.js
+* Database: MongoDB
+* DevOps: Docker, Docker Compose
 
-### ES Modules in Node
+---
 
-We use ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
-
-Also, when importing a file (not a package), be sure to add .js at the end or you will get a "module not found" error
-
-You can also install and setup Babel if you would like
-
-### Env Variables
-
-Create a .env file in then root and add the following
+## 📂 Project Structure
 
 ```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+proshop_mern/
+│── backend/
+│── frontend/
+│── docker-compose.yml
+│── README.md
 ```
 
-### Install Dependencies (frontend & backend)
+---
 
-```
-npm install
-cd frontend
-npm install
-```
+## 🐳 Docker Setup
 
-### Run
+### 🔧 Prerequisites
 
-```
-# Run frontend (:3000) & backend (:5000)
-npm run dev
+Make sure Docker and Docker Compose are installed on your system.
 
-# Run backend only
-npm run server
+---
+
+### ▶️ Run the Application
+
+```bash
+docker-compose up -d
 ```
 
-## Build & Deploy
+This will:
 
-```
-# Create frontend prod build
-cd frontend
-npm run build
-```
+* Pull required images (if not available)
+* Build containers (if needed)
+* Start frontend, backend, and MongoDB services
 
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
+---
 
-### Seed Database
+### 🛑 Stop the Application
 
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
-
-```
-# Import data
-npm run data:import
-
-# Destroy data
-npm run data:destroy
+```bash
+docker-compose down
 ```
 
+---
+
+## 🌐 Application URLs
+
+* Frontend: http://localhost:3000
+* Backend API: http://localhost:5000
+
+---
+
+## 📦 Docker Images
+
+The application uses the following Docker images:
+
+* Frontend Image: `abhaylove/mern-frontend`
+* Backend Image: `abhaylove/mern-backend`
+* Database Image: `mongo` (official image from Docker Hub)
+
+---
+
+## 🔗 How It Works
+
+* Frontend communicates with backend using API calls
+* Backend connects to MongoDB using Docker network
+* All services are managed via Docker Compose
+* No need for manual setup or dependency installation
+
+---
+
+## 🚀 Deployment
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ABHAY9927/MERN_PROJECT_WITH_DOCKER.git
 ```
-Sample User Logins
 
-admin@example.com (Admin)
-123456
+2. Navigate to project folder:
 
-john@example.com (Customer)
-123456
-
-jane@example.com (Customer)
-123456
+```bash
+cd MERN_PROJECT_WITH_DOCKER
 ```
 
+3. Run the project:
 
-## License
+```bash
+docker-compose up -d
+```
 
-The MIT License
+4. Open in browser:
 
-Copyright (c) 2020 Traversy Media https://traversymedia.com
+```
+http://localhost:3000
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+---
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+## ⚠️ Notes
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+* Ensure ports 3000, 5000, and 27017 are free
+* `.env` files are not included for security reasons
+* MongoDB runs inside a Docker container
+
+---
+
+## 👨‍💻 Author
+
+**Abhay Kumar**
+
+---
+
+## ⭐ Acknowledgement
+
+This project is based on learning and implementation of MERN stack and Docker containerization.
